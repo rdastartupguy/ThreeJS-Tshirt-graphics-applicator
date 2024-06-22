@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-md-12">
+        <label class="label title">
+            Model Selection
+        </label>
+        <select class="form-select" id="modelSelection">
+            {{#each models}}
+            <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="col-md-12">
+        <label class="label title">
+            Style Statement
+        </label>
+        <ul class="backgroudlist">
+            {{#each background}}
+            <li class="matclick" id="{{this.id}}" data-url="{{this.url}}" data-id="{{this.id}}"
+                data-type="{{this.type}}" data-color="{{this.color}}"><img src="{{this.image}}" />
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col-md-12 mt32">
+        <label class="label title">
+            Tee’s Color
+        </label>
+        <ul class="colorlist">
+            {{#each colors}}
+            <li class="colorclick" id="Colors_{{this.value}}" data-color="{{this.value}}" data-id="{{this.value}}"><span
+                    style="background-color: #{{this.value}};" />
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+
+    <div class="col-md-12 mt32">
+        <label class="label title">
+            Upload Your Design
+        </label>
+        <span class="decalpreview">
+            <ul class="previewimagelist" id="previewimagelist">
+
+            </ul>
+
+        </span>
+        <ul class="list-buttons">
+
+            <li>
+                <a href="#" class="btn btn-outline-dark uploadDesignbtn" id="uploadDesignbtn"> Add</a>
+
+            </li>
+
+            <li>
+                <a href="#" class="btn btn-outline-dark rotatebtn right decalshow"> <img src="./assets/right.png" /></a>
+
+            </li>
+
+
+            <li>
+                <a href="#" class="btn btn-outline-dark removeDesignbtn decalshow" id="removeDesignbtn"> Del</a>
+            </li>
+        </ul>
+        <ul class="list-buttons mt32 decalshow">
+            <li>
+                <div class="printDesignLayout">
+                    <span>Printable Image size</span>
+                    <p class="label" id="printSizeTxt">8 cm (W) x 3 cm (H)</p>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="btn btn-outline-dark scalebtn" data-type="down"> - </a>
+
+            </li>
+            <li>
+                <a href="#" class="btn btn-outline-dark scalebtn" data-type="up"> + </a>
+
+            </li>
+        </ul>
+
+
+    </div>
+
+    <div class="col-md-12 mt32">
+        <label class="label title">
+            Add Text
+        </label>
+    </div>
+
+    <div class="col-md-12 mt32" id="TextListLayout">
+    </div>
+
+
+</div>

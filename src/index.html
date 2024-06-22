@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>T shirt customizer</title>
+    <script>
+
+        let serverurl = "./";
+        let modelList = JSON.stringify({
+            "models": [
+
+                {
+                    "name": "Girls T-Shirts",
+                    "id": "girls-t",
+                    "url": serverurl + "models/girls-t.glb",
+                    "print": false,
+                    "scale": 65
+                },
+                {
+                    "name": "Mens T-shirts",
+                    "id": "mens_t_shirts",
+                    "url": serverurl + "models/mens.glb",
+                    "print": false,
+                    "scale": 65
+                },
+                {
+                    "name": "Hoodies shirts",
+                    "id": "hoodies_t_shirts",
+                    "url": serverurl + "models/hoodies.glb",
+                    "print": false,
+                    "scale": 58
+                }
+
+            ]
+        });
+        let modelurl = './models/tshirt_teeshot.glb';
+        let tshirtsColorsList = JSON.stringify([
+            { value: "222f3e" },
+            { value: "f7b500" },
+            { value: "cccac9" },
+            { value: "ffc0cb" },
+            { value: "ad88c6" },
+        ]);
+        let backgroundImageList = JSON.stringify({
+            "background": [
+                {
+                    "name": "pexels-photo",
+                    "id": "pexels-photo",
+                    "image": serverurl + "background/thumbnail/pexels-photo.jpeg",
+                    "url": serverurl + "background/600/pexels-photo-1072179-600.jpeg",
+                    "type": "image",
+                    "color": ""
+                },
+                {
+                    "name": "pexels-asad-photo-maldives",
+                    "id": "pexels-asad-photo-maldives",
+                    "image": serverurl + "background/thumbnail/pexels-asad-photo-maldives.jpeg",
+                    "url": serverurl + "background/600/pexels-photo-457882-2-2.jpeg",
+                    "type": "image",
+                    "color": ""
+                },
+                {
+                    "name": "pexels-marc-mueller",
+                    "id": "pexels-marc-mueller",
+                    "image": serverurl + "background/thumbnail/pexels-marc-mueller.jpg",
+                    "url": serverurl + "background/600/pexels-marc-mueller-380768.jpg",
+                    "type": "image",
+                    "color": ""
+                },
+                {
+                    "name": "pexels-shonejai",
+                    "id": "pexels-shonejai",
+                    "image": serverurl + "background/thumbnail/pexels-shonejai.jpg",
+                    "url": serverurl + "background/600/pexels-shonejai.jpg",
+                    "type": "image",
+                    "color": ""
+                }
+            ]
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <img id="image" />
+        <canvas id="textCanvas"></canvas>
+        <div class="LoadingGif" id="LoadingGif">
+            <img id="loadingImg" />
+        </div>
+        <div id="logo" class="logo" alt="craftpixels logo"></div>
+        <input id="myInput" type="file" style="visibility:hidden;display:none;" />
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 p-relative" id="previewCanvas">
+                <div class="backgroundPreview" id="backgroundPreview"></div>
+                <canvas class="webgl"></canvas>
+            </div>
+            <div class="col-md-5 p-relative" id="settingsPanelLayout">
+                <div class="row">
+                    <div class="col-md-12 p-relative" id="settingsPanel">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="LayerPanelSettings"></div>
+
+</body>
+
+</html>
