@@ -1,0 +1,37 @@
+<li>
+    <input type="text" name="text[]" class="textInput form-control" id="TextInput_{{id}}" data-id="{{id}}"
+        placeholder="Enter text" value="{{text}}" autocomplete="off" />
+</li>
+<li>
+    <select id="ChooseFontSize_{{id}}" class="form-select ChooseFontSize" data-id="{{id}}">
+        <option value="16" selected>16 pt</option>
+        <option value="18">18 pt</option>
+        <option value="24">24 pt</option>
+        <option value="32">32 pt</option>
+        <option value="36">36 pt</option>
+        <option value="48">48 pt</option>
+        <option value="60">60 pt</option>
+    </select>
+</li>
+<li>
+    <select id="ChooseFontFamily_{{id}}" class="form-select ChooseFontFamily" data-id="{{id}}">
+        <option value="Montserrat-Regular" selected>Montserrat-Regular</option>
+        <option value="SixCaps-Regular">SixCaps-Regular</option>
+        <option value="Condiment-Regular">Condiment-Regular</option>
+    </select>
+</li>
+{{#if add}}
+<li>
+    <a href="#" class="btn btn-outline-dark addTextBtn"> + </a>
+</li>
+{{/if}}
+<li>
+    <a href="#" class="btn btn-outline-dark textrotatebtn right" data-id="{{id}}" id="rotatebtn_{{id}}"> <img
+            src="./assets/right.png" data-id="{{id}}" /></a>
+
+</li>
+<li>
+    <a href="#" class="btn btn-outline-dark removeTextDesignbtn" data-id="{{id}}" data-flags="{{flags}}"
+        id="removeTextDesignbtn_{{id}}">
+        Del</a>
+</li>
